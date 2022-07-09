@@ -1,0 +1,54 @@
+﻿@model ELearningUI.Models.Assessment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Assessment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AssessmentCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AssessmentCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Attendance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Attendance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Assignment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Assignment.AssignmentId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Exam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Exam.ExamId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lecturer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lecturer.LecturerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quiz)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quiz.QuizId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AssessmentId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

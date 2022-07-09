@@ -1,0 +1,55 @@
+﻿@model ELearningUI.Models.Assessment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Assessment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AssessmentCode" class="control-label"></label>
+                <input asp-for="AssessmentCode" class="form-control" />
+                <span asp-validation-for="AssessmentCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendance" class="control-label"> Attendance</label>
+                <input asp-for="Attendance" class="form-control" />
+                <span asp-validation-for="Attendance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssignmentId" class="control-label">Assignment-Id</label>
+                <select asp-for="AssignmentId" class ="form-control" asp-items="ViewBag.AssignmentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizId" class="control-label">Quiz-Id</label>
+                <select asp-for="QuizId" class ="form-control" asp-items="ViewBag.QuizId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExamId" class="control-label">Exam-Id</label>
+                <select asp-for="ExamId" class ="form-control" asp-items="ViewBag.ExamId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturerId" class="control-label">Lecturer-Id</label>
+                <select asp-for="LecturerId" class ="form-control" asp-items="ViewBag.LecturerId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-outline-secondary"asp-action="Index">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+  
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
